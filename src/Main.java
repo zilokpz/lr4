@@ -1,17 +1,33 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Random;
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Random random=new Random();
+        int a = random.nextInt(100);
+        int b = random.nextInt(100);
+        int c = random.nextInt(100);
+        int max = Math.max(Math.max(a , b ) , c );
+        System.out.println(max);
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        boolean containsDigit = false;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isDigit(str.charAt(i))) {
+                containsDigit = true;
+                break;
+            }
         }
+
+        if (containsDigit) {
+            System.out.println("В строке есть цифры.");
+        } else {
+            System.out.println("В строке нет цифр.");
+        }
+
     }
 }
